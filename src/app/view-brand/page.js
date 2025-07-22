@@ -1,0 +1,86 @@
+"use client";
+
+import { useState } from "react";
+import Sidebar from "@/Components/Sidebar/Sidebar";
+import Navbar from "@/Components/Navbar/Navbar";
+const brandList = [
+  { city: "Kolkata", name: "Voltas Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Videocon Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Vestar Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Toshiba Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Sharp Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Sanyo Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Samsung Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Panasonic Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Onida Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Ogeneral Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Mitsubishi Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Mitashi Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Midea Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Lloyd Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "LG Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Kenstar Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Kelvinator Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "IFB Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Hitachi Ac Service Center", status: "Active" },
+  { city: "Kolkata", name: "Godrej Ac Service Center", status: "Active" },
+];
+
+export default function Page() {
+  const [brands] = useState(brandList);
+
+  return (
+    <div className="flex min-h-screen">
+      <Sidebar />
+      <div className="flex-1 bg-gray-100">
+        <Navbar />
+        <div className="p-6 w-full">
+          <h2 className="text-2xl font-bold mb-4">Brands</h2>
+          <div className="overflow-x-auto bg-white shadow-md rounded-lg">
+            <table className="min-w-full table-auto border-collapse">
+              <thead className="bg-gray-100 text-gray-700">
+                <tr>
+                  <th className="px-4 py-3 text-left">City</th>
+                  <th className="px-4 py-3 text-left">Name</th>
+                  <th className="px-4 py-3 text-left">Status</th>
+                  <th className="px-4 py-3 text-left">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {brands.map((brand, index) => (
+                  <tr key={index} className="border-b hover:bg-gray-50">
+                    <td className="px-4 py-2">{brand.city}</td>
+                    <td className="px-4 py-2">{brand.name}</td>
+                    <td className="px-4 py-2">
+                      <span
+                        className={`px-2 py-1 text-sm font-semibold rounded ${
+                          brand.status === "Active"
+                            ? "bg-green-100 text-green-700"
+                            : "bg-red-100 text-red-700"
+                        }`}
+                      >
+                        {brand.status}
+                      </span>
+                    </td>
+                    <td className="px-4 py-2">
+                      <button className="text-blue-600 hover:underline">
+                        Edit
+                      </button>
+                      <span className="mx-2">|</span>
+                      <button className="text-red-600 hover:underline">
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div className="text-xs text-right text-gray-500 p-4">
+              info@xyz.in
+            </div>
+          </div>
+        </div> 
+      </div>  
+    </div>
+  );
+}
