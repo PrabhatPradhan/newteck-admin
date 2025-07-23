@@ -1,8 +1,13 @@
 "use client";
-import Sidebar from "../../Components/Sidebar/Sidebar"
-import Navbar from "../../Components/Navbar/Navbar"
+
+import { useState } from "react";
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import Navbar from "../../Components/Navbar/Navbar";
+import { FaEdit, FaTrash } from "react-icons/fa";
+import Link from "next/link";
+
 export default function ViewSubcategoryPage() {
-  const subcategories = [
+  const [subcategories, setSubcategories] = useState([
     {
       category: "ELECTRONICS",
       name: "TELEVISION",
@@ -27,10 +32,15 @@ export default function ViewSubcategoryPage() {
       icon: "/images/microwave.png",
       status: "Active",
     },
-  ];
+  ]);
 
-  const handleEdit = (name) => {
-    alert(`Edit clicked for: ${name}`);
+ 
+
+  const handleDelete = (name) => {
+    const confirmDelete = window.confirm(`Are you sure you want to delete ${name}?`);
+    if (confirmDelete) {
+      setSubcategories((prev) => prev.filter((item) => item.name !== name));
+    }
   };
 
   return (
@@ -45,7 +55,7 @@ export default function ViewSubcategoryPage() {
           {/* Header */}
           <div className="bg-white px-4 py-3 shadow flex items-center gap-3">
             <div className="text-xl">&#9776;</div>
-            <h1 className="text-lg font-semibold">Subcategorys</h1>
+            <h1 className="text-lg font-semibold">Subcategories</h1>
           </div>
 
           {/* Table */}
@@ -58,7 +68,7 @@ export default function ViewSubcategoryPage() {
                     <th className="px-4 py-3">Name</th>
                     <th className="px-4 py-3">Icon</th>
                     <th className="px-4 py-3">Status</th>
-                    <th className="px-4 py-3">Action</th>
+                    <th className="px-4 py-3">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="text-gray-700">
@@ -84,12 +94,14 @@ export default function ViewSubcategoryPage() {
                           {item.status}
                         </span>
                       </td>
-                      <td className="px-4 py-3">
-                        <button
-                          onClick={() => handleEdit(item.name)}
-                          className="text-blue-600 hover:underline"
-                        >
-                          Edit
+                      <td className="px-4 py-3 flex gap-3 items-center text-blue-600">
+                       <Link href="/editbanner">
+                       <button title="Edit">
+                          <FaEdit className="hover:text-blue-800" />
+                        </button>
+                       </Link>
+                        <button onClick={() => handleDelete(item.name)} title="Delete">
+                          <FaTrash className="text-red-500 hover:text-red-700" />
                         </button>
                       </td>
                     </tr>

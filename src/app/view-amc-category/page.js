@@ -46,7 +46,9 @@ export default function  Page() {
                       <div className="w-8 h-8 rounded bg-gray-200" />
                     </td>
                     <td className="px-4 py-2 text-green-600 font-medium">{cat.status}</td>
+                    
                     <td className="px-4 py-2 text-blue-500 cursor-pointer">✏️</td>
+
                   </tr>
                 ))}
               </tbody>

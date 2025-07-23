@@ -1,7 +1,11 @@
 "use client";
-import Sidebar from "../../Components/Sidebar/Sidebar"
-import Navbar from "../../Components/Navbar/Navbar"
-export default function  Page() {
+
+import { FaEdit, FaTrash } from "react-icons/fa";
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import Navbar from "../../Components/Navbar/Navbar";
+import Link from "next/link";
+
+export default function Page() {
   const subcategories = [
     {
       category: "ELECTRONICS",
@@ -29,8 +33,10 @@ export default function  Page() {
     },
   ];
 
-  const handleEdit = (name) => {
-    alert(`Edit clicked for: ${name}`);
+ 
+
+  const handleDelete = (name) => {
+    alert(`Delete clicked for: ${name}`);
   };
 
   return (
@@ -84,12 +90,22 @@ export default function  Page() {
                           {item.status}
                         </span>
                       </td>
-                      <td className="px-4 py-3">
-                        <button
-                          onClick={() => handleEdit(item.name)}
-                          className="text-blue-600 hover:underline"
+                      <td className="px-4 py-3 flex items-center gap-4">
+                       <Link href="">
+                       <button
+                           
+                          className="text-blue-600 hover:text-blue-800"
+                          title="Edit"
                         >
-                          Edit
+                          <FaEdit size={16} />
+                        </button>
+                       </Link>
+                        <button
+                          onClick={() => handleDelete(item.name)}
+                          className="text-red-600 hover:text-red-800"
+                          title="Delete"
+                        >
+                          <FaTrash size={16} />
                         </button>
                       </td>
                     </tr>

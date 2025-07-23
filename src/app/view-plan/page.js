@@ -1,8 +1,11 @@
 "use client";
 
 import React from "react";
-import Sidebar from "../../Components/Sidebar/Sidebar"
-import Navbar from "../../Components/Navbar/Navbar"
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import Navbar from "../../Components/Navbar/Navbar";
+import { FaEdit, FaTrash } from "react-icons/fa";
+import Link from "next/link";
+
 const plans = [
   {
     category: "RO WATER PURIFIER AMC",
@@ -20,8 +23,7 @@ const plans = [
   },
   {
     category: "WASHING MACHINE AMC",
-    type:
-      "Annual Maintenance Contract for Fully Automatic and Frond Loader Washing Machine",
+    type: "Annual Maintenance Contract for Fully Automatic and Frond Loader Washing Machine",
     duration: "1 YEAR",
     charges: "3449",
     status: "Active",
@@ -84,8 +86,7 @@ const plans = [
   },
   {
     category: "WASHING MACHINE AMC",
-    type:
-      "Annual Maintenance Contract for Fully Automatic and Top Loader Washing Machine",
+    type: "Annual Maintenance Contract for Fully Automatic and Top Loader Washing Machine",
     duration: "1 YEAR",
     charges: "2999",
     status: "Active",
@@ -154,9 +155,20 @@ export default function PlansPage() {
                       {plan.status}
                     </td>
                     <td className="px-4 py-2">
-                      <button className="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-1 rounded">
-                        Edit
-                      </button>
+                      <div className="flex items-center gap-3 text-lg">
+                        <Link href="/editbanner">
+                       <button
+                          className="text-blue-600 hover:text-blue-800"
+                          title="Edit"
+                        >
+                          <FaEdit />
+                        </button>
+                       </Link>
+                         
+                        <button className="text-red-600 hover:text-red-800">
+                          <FaTrash />
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}

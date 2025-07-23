@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import Sidebar from "../../Components/Sidebar/Sidebar"
-import Navbar from "../../Components/Navbar/Navbar"
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import Navbar from "../../Components/Navbar/Navbar";
+
 export default function AddPlanPage() {
   return (
     <div className="flex h-screen">
@@ -16,9 +17,9 @@ export default function AddPlanPage() {
         <Navbar />
 
         <div className="p-6">
-          <h1 className="text-2xl font-bold mb-6">Add plan</h1>
+          <h1 className="text-2xl font-bold mb-6">Add Plan</h1>
 
-          <form className="bg-white rounded-lg shadow-md p-6 max-w-xl space-y-5">
+          <form className="bg-white rounded-lg shadow-md p-6 w-full lg:max-w-full space-y-5">
             {/* Category */}
             <div>
               <label className="block mb-1 font-medium text-gray-700">
@@ -68,12 +69,14 @@ export default function AddPlanPage() {
             </div>
 
             {/* Submit Button */}
-            <button
-              type="submit"
-              className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
-            >
-              Submit
-            </button>
+            <div>
+              <button
+                type="submit"
+                className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+              >
+                Submit
+              </button>
+            </div>
           </form>
 
           {/* Footer */}

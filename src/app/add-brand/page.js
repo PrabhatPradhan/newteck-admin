@@ -16,6 +16,8 @@ export default function AddBrand() {
           <form className="bg-white p-6 rounded-lg shadow space-y-6">
             {/* Basic Info */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input type="text" placeholder="Add brand" className="border p-2 rounded" />
+              <input type="text" placeholder="Add brand" className="border p-2 rounded" />
               <div>
                 <label className="block font-semibold">Category</label>
                 <select className="w-full border rounded p-2">
@@ -28,10 +30,10 @@ export default function AddBrand() {
                   <option>Select City</option>
                 </select>
               </div>
-              <input type="text" placeholder="Name" className="col-span-1 md:col-span-2 border p-2 rounded" />
-              <input type="text" placeholder="URL" className="col-span-1 md:col-span-2 border p-2 rounded" />
-              <input type="text" placeholder="Title" className="col-span-1 md:col-span-2 border p-2 rounded" />
-              <input type="text" placeholder="Points (## separated)" className="col-span-1 md:col-span-2 border p-2 rounded" />
+              <input type="text" placeholder="Name" className="border p-2 rounded" />
+              <input type="text" placeholder="URL" className="border p-2 rounded" />
+              <input type="text" placeholder="Title" className="border p-2 rounded" />
+              <input type="text" placeholder="Points (## separated)" className="border p-2 rounded" />
             </div>
 
             {/* Images */}
@@ -50,7 +52,7 @@ export default function AddBrand() {
                 <label className="block font-semibold">Image 2</label>
                 <input type="file" className="w-full border p-2 rounded" />
               </div>
-              <input type="text" placeholder="Image2 ALT" className="border p-2 rounded" />
+              <input type="text" placeholder="Image 2 ALT" className="border p-2 rounded" />
             </div>
 
             {/* Descriptions */}

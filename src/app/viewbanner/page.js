@@ -3,6 +3,7 @@
 import { FaEdit } from "react-icons/fa";
 import Sidebar from "../../Components/Sidebar/Sidebar"
 import Navbar from "../../Components/Navbar/Navbar"
+import Link from "next/link";
 export default function BannersPage() {
   const banners = [
     {
@@ -19,9 +20,7 @@ export default function BannersPage() {
     },
   ];
 
-  const handleEdit = (id) => {
-    alert(`Edit banner with ID: ${id}`);
-  };
+  
 
   return (
     <>
@@ -61,12 +60,14 @@ export default function BannersPage() {
                         <td className="p-3">{banner.page}</td>
                         <td className="p-3">{banner.status}</td>
                         <td className="p-3">
-                          <button
-                            onClick={() => handleEdit(banner.id)}
+                         <Link href="/editbanner">
+                         <button
+                             
                             className="bg-cyan-600 hover:bg-cyan-700 text-white p-2 rounded"
                           >
                             <FaEdit />
                           </button>
+                         </Link>
                         </td>
                       </tr>
                     ))}

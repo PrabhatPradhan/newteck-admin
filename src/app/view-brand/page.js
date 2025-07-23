@@ -3,6 +3,9 @@
 import { useState } from "react";
 import Sidebar from "@/Components/Sidebar/Sidebar";
 import Navbar from "@/Components/Navbar/Navbar";
+import { FiEdit, FiTrash2 } from "react-icons/fi"; // ← Imported Icons
+import Link from "next/link";
+
 const brandList = [
   { city: "Kolkata", name: "Voltas Ac Service Center", status: "Active" },
   { city: "Kolkata", name: "Videocon Ac Service Center", status: "Active" },
@@ -62,13 +65,17 @@ export default function Page() {
                         {brand.status}
                       </span>
                     </td>
-                    <td className="px-4 py-2">
-                      <button className="text-blue-600 hover:underline">
-                        Edit
+                    <td className="px-4 py-2 flex gap-4 text-lg">
+                    
+                        
+                        
+                       <Link href="/editbanner">
+                      <button className="text-blue-600 hover:text-blue-800" title="Edit">
+                        <FiEdit />
                       </button>
-                      <span className="mx-2">|</span>
-                      <button className="text-red-600 hover:underline">
-                        Delete
+                      </Link>
+                      <button className="text-red-600 hover:text-red-800" title="Delete">
+                        <FiTrash2 />
                       </button>
                     </td>
                   </tr>
@@ -79,8 +86,8 @@ export default function Page() {
               info@xyz.in
             </div>
           </div>
-        </div> 
-      </div>  
+        </div>
+      </div>
     </div>
   );
 }

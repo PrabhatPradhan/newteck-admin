@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
+import { FaEdit, FaTrash } from "react-icons/fa"; // ✅ Import icons
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
+import Link from "next/link";
 
 const galleryData = [
   { image: "", youtube: "twXJzEaEai4", status: "Active" },
@@ -16,7 +18,7 @@ const galleryData = [
   { image: "", youtube: "", status: "Active" },
 ];
 
-export default function Page() { // 👈 Fix: 'Page' instead of 'page'
+export default function Page() {
   return (
     <div className="flex min-h-screen">
       {/* Sidebar */}
@@ -64,9 +66,19 @@ export default function Page() { // 👈 Fix: 'Page' instead of 'page'
                       </span>
                     </td>
                     <td className="py-2 px-4 border-b">
-                      <button className="text-blue-600 hover:underline text-sm">
-                        Edit
-                      </button>
+                      <div className="flex items-center gap-3">
+                      <Link href="/editbanner">
+                       <button
+                          className="text-blue-600 hover:text-blue-800"
+                          title="Edit"
+                        >
+                          <FaEdit />
+                        </button>
+                       </Link>
+                        <button className="text-red-600 hover:text-red-800 text-sm">
+                          <FaTrash />
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}

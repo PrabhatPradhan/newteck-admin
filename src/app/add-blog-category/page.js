@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Sidebar from "../../Components/Sidebar/Sidebar"
-import Navbar from "../../Components/Navbar/Navbar"
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import Navbar from "../../Components/Navbar/Navbar";
+
 export default function AddCategoryPage() {
   const [name, setName] = useState("");
   const [iconAlt, setIconAlt] = useState("");
@@ -36,9 +37,9 @@ export default function AddCategoryPage() {
 
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-6 rounded-md shadow-md w-full max-w-xl"
+            className="bg-white p-6 rounded-md shadow-md w-full"
           >
-            <div className="mb-4">
+            <div className="mb-4 w-full">
               <label className="block text-sm font-semibold mb-1">Name</label>
               <input
                 type="text"
@@ -50,10 +51,8 @@ export default function AddCategoryPage() {
               />
             </div>
 
-            <div className="mb-4">
-              <label className="block text-sm font-semibold mb-1">
-                Image Icon
-              </label>
+            <div className="mb-4 w-full">
+              <label className="block text-sm font-semibold mb-1">Image Icon</label>
               <input
                 type="file"
                 accept="image/*"
@@ -62,10 +61,8 @@ export default function AddCategoryPage() {
               />
             </div>
 
-            <div className="mb-4">
-              <label className="block text-sm font-semibold mb-1">
-                Image ALT
-              </label>
+            <div className="mb-4 w-full">
+              <label className="block text-sm font-semibold mb-1">Image ALT</label>
               <input
                 type="text"
                 value={iconAlt}
@@ -75,7 +72,7 @@ export default function AddCategoryPage() {
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-4 w-full">
               <label className="block text-sm font-semibold mb-1">Status</label>
               <select
                 className="w-full border px-3 py-2 rounded focus:outline-none focus:ring focus:border-blue-300"
