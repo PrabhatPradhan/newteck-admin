@@ -2,6 +2,7 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
+import Link from "next/link";
 
 export default function CategoryList() {
   const categories = [
@@ -51,9 +52,12 @@ export default function CategoryList() {
                     </td>
                     <td className="px-4 py-2 border">{cat.status}</td>
                     <td className="px-4 py-2 border space-x-3">
+                      <Link href="/edit-blog-catrgory">
                       <button className="text-blue-600 hover:text-blue-800">
                         <FaEdit className="inline-block mr-1" />
                       </button>
+                      </Link>
+                      
                       <button className="text-red-600 hover:text-red-800">
                         <FaTrash className="inline-block" />
                       </button>

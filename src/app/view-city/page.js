@@ -54,7 +54,7 @@ export default function CitiesPage() {
                       </span>
                     </td>
                     <td className="px-4 py-2 space-x-3 flex items-center">
-                    <Link href="/editbanner">
+                    <Link href="/edit-city">
                       <button className="text-blue-600 hover:text-blue-800">
                         <FiEdit className="w-5 h-5" />
                       </button>

@@ -156,7 +156,7 @@ export default function PlansPage() {
                     </td>
                     <td className="px-4 py-2">
                       <div className="flex items-center gap-3 text-lg">
-                        <Link href="/editbanner">
+                        <Link href="/edit-plan">
                        <button
                           className="text-blue-600 hover:text-blue-800"
                           title="Edit"

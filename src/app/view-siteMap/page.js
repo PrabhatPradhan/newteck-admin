@@ -3,6 +3,7 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
+import Link from "next/link";
 
 const sitemaps = [
   {
@@ -64,9 +65,12 @@ export default function SitemapList() {
                     </td>
                     <td className="px-4 py-2 border">
                       <div className="flex items-center justify-center gap-4">
+                        <Link href="/edit-sitemap">
                         <button className="text-yellow-600 hover:text-yellow-800">
                           <FaEdit />
                         </button>
+                        </Link>
+                        
                         <button className="text-red-600 hover:text-red-800">
                           <FaTrash />
                         </button>

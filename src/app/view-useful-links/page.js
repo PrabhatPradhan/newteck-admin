@@ -4,6 +4,7 @@ import { useState } from "react";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import Link from "next/link";
 
 const initialLinks = [
   { city: "Tv AMC Plan Kolkata", status: "Active" },
@@ -54,9 +55,12 @@ export default function UsefulLinksPage() {
                       </span>
                     </td>
                     <td className="px-4 py-2 flex gap-3">
+                      <Link href="/edit-UsefulLink">
                       <button className="text-blue-600 hover:text-blue-800">
                         <FaEdit />
                       </button>
+                      </Link>
+                     
                       <button className="text-red-600 hover:text-red-800">
                         <FaTrash />
                       </button>

@@ -2,6 +2,7 @@
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Page() {
   const categories = [
@@ -51,9 +52,11 @@ export default function Page() {
                     </td>
                     <td className="px-4 py-2 border">{cat.status}</td>
                     <td className="px-4 py-2 border flex gap-3 items-center">
+                      <Link href="/edit-blog">
                       <button className="text-blue-600 hover:text-blue-800">
                         <FaEdit />
                       </button>
+                      </Link>
                       <button className="text-red-600 hover:text-red-800">
                         <FaTrash />
                       </button>

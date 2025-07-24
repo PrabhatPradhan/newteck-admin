@@ -2,6 +2,7 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -60,9 +61,12 @@ export default function FaqsTable() {
                       <span className="text-green-600 font-medium">{faq.status}</span>
                     </td>
                     <td className="px-4 py-2 text-sm flex items-center gap-3">
+                      <Link href="/edit-faq">
                       <button className="text-yellow-600 hover:text-yellow-800">
                         <FaEdit />
                       </button>
+                      </Link>
+                    
                       <button className="text-red-600 hover:text-red-800">
                         <FaTrash />
                       </button>

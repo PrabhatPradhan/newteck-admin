@@ -67,7 +67,7 @@ export default function Page() {
                     </td>
                     <td className="py-2 px-4 border-b">
                       <div className="flex items-center gap-3">
-                      <Link href="/editbanner">
+                      <Link href="/edit-gallary">
                        <button
                           className="text-blue-600 hover:text-blue-800"
                           title="Edit"

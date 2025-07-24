@@ -69,7 +69,7 @@ export default function Page() {
                     
                         
                         
-                       <Link href="/editbanner">
+                       <Link href="/edit-brand">
                       <button className="text-blue-600 hover:text-blue-800" title="Edit">
                         <FiEdit />
                       </button>

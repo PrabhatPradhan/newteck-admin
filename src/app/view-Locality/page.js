@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
+import Link from "next/link";
 
 const initialLocalities = [
   { city: "Kolkata", name: "Salt Lake", status: "Active" },
@@ -57,9 +58,11 @@ export default function Page() {
                       </span>
                     </td>
                     <td className="px-4 py-2 flex gap-3">
+                      <Link href="/edit-locality">
                       <button className="text-blue-600 hover:text-blue-800">
                         <FaEdit />
                       </button>
+                      </Link>
                       <button className="text-red-600 hover:text-red-800">
                         <FaTrash />
                       </button>
