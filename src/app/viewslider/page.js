@@ -10,13 +10,13 @@ export default function SliderPage() {
       id: 1,
       imageUrl: '/images/feedback.png',
       status: 'Active',
-      email: 'info@xyz.in',
+     
     },
     {
       id: 2,
       imageUrl: '/images/contact.png',
       status: 'Inactive',
-      email: 'support@xyz.in',
+      
     },
   ];
 
