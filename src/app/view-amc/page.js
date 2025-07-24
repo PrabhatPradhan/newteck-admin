@@ -1,7 +1,10 @@
 'use client';
 
-import Sidebar from "../../Components/Sidebar/Sidebar"
-import Navbar from "../../Components/Navbar/Navbar"
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import Navbar from "../../Components/Navbar/Navbar";
+import { FiEdit,FiTrash2 } from "react-icons/fi"; // ← Import Edit Icon
+import Link from "next/link";
+
 const amcList = [
   { category: "RO Water Purifier", status: "Active" },
   { category: "Kitchen Chimney", status: "Active" },
@@ -13,17 +16,24 @@ const amcList = [
   { category: "Refrigerator", status: "Active" },
 ];
 
-export default function  Page() {
+export default function Page() {
+  const hendleDelete=(category)=>{
+    const confirm=window.confirm(`are you sure `);
+    if(confirm){
+      console.log(`delete:${category} `)
+    }
+  };
   return (
-    <div className="flex h-screen">
-      {/* Sidebar */}
-      <div className="w-64 bg-gray-800 text-white">
-        <Sidebar />
-      </div>
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
 
-      {/* Main content */}
-      <div className="flex-1 bg-gray-100 overflow-y-auto">
-        <Navbar />
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="p-6">
           <h2 className="text-2xl font-semibold mb-4">AMCs</h2>
 
@@ -41,7 +51,15 @@ export default function  Page() {
                   <tr key={index}>
                     <td className="px-4 py-2 text-gray-800">{item.category}</td>
                     <td className="px-4 py-2 text-green-600 font-medium">{item.status}</td>
-                    <td className="px-4 py-2 text-blue-500 cursor-pointer">✏️</td>
+                    <td className="px-4 py-2 text-blue-500 cursor-pointer">
+                    <div className="flex items-center gap-3 text-lg text-blue-500 cursor-pointer">
+                      <Link href="edit-amc">
+                      <FiEdit />
+                        </Link> 
+                        <FiTrash2 className="text-red-500"
+                        onClick={()=> hendleDelete(item.category)} />
+                      </div>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -51,7 +69,7 @@ export default function  Page() {
           {/* Footer */}
           <footer className="text-center text-gray-600 mt-6">info@xyz.in</footer>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

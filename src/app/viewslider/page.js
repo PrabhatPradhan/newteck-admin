@@ -3,6 +3,7 @@
 import { FaPen } from 'react-icons/fa';
 import Sidebar from "../../Components/Sidebar/Sidebar"
 import Navbar from "../../Components/Navbar/Navbar"
+import Link from 'next/link';
 export default function SliderPage() {
   const sliders = [
     {
@@ -19,18 +20,19 @@ export default function SliderPage() {
     },
   ];
 
-  const handleEdit = (id) => {
-    alert(`Edit clicked for ID: ${id}`);
-  };
+ 
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen">
-        <div className="w-full lg:w-64 bg-gray-800 text-white">
-          <Sidebar />
-        </div>
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
 
-        <div className="flex-1 overflow-y-auto bg-gray-100">
-          <Navbar />
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-5xl mx-auto bg-white rounded shadow p-6">
         <h2 className="text-2xl font-bold mb-6">Slider</h2>
@@ -57,12 +59,13 @@ export default function SliderPage() {
                   </td>
                   <td className="p-3 border">{slider.status}</td>
                   <td className="p-3 border">
+                    <Link href="/edit-slider">
                     <button
-                      onClick={() => handleEdit(slider.id)}
+                    
                       className="bg-cyan-600 hover:bg-cyan-700 text-white p-2 rounded"
                     >
                       <FaPen size={14} />
-                    </button>
+                    </button></Link>
                   </td>
                 </tr>
               ))}
@@ -71,7 +74,7 @@ export default function SliderPage() {
         </div>
       </div>
     </div>
-    </div>
+    </main>
     </div>
   );
 }

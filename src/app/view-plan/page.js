@@ -122,11 +122,30 @@ const plans = [
 ];
 
 export default function PlansPage() {
+  // const hendlerDelete=(category)=>{
+  //   const confirm =window.confirm('are you sure you want to delete ');
+  //   if(confirm){
+  //     console.log(`delete ${category}`)
+  //   }
+
+  // }
+  const hendelDelete=(category)=>{
+    const confirm=window.confirm(`are you sure you want delete this`);
+    if(confirm){
+      console.log(`delete ${category}`)
+    }
+  }
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
       <Sidebar />
-      <div className="flex-1 bg-gray-100">
-        <Navbar />
+    </div>
+
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="p-6">
           <h1 className="text-2xl font-bold mb-4">Plans</h1>
           <div className="overflow-x-auto">
@@ -165,7 +184,9 @@ export default function PlansPage() {
                         </button>
                        </Link>
                          
-                        <button className="text-red-600 hover:text-red-800">
+                        <button className="text-red-600 hover:text-red-800"
+                        onClick={()=> hendelDelete(plan.category)}
+                        >
                           <FaTrash />
                         </button>
                       </div>
@@ -179,7 +200,7 @@ export default function PlansPage() {
             info@xyz.in
           </p>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

@@ -27,7 +27,7 @@ export default function AddAmcCategoryPage() {
       <Navbar />
         <div className="p-6">
           <div className="bg-white shadow-md rounded-lg p-6">
-            <h2 className="text-2xl font-semibold mb-4">Add AMC Category</h2>
+            <h2 className="text-2xl font-semibold mb-4">Edit AMC Category</h2>
 
             <form className="space-y-4">
               {/* Name */}

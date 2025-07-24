@@ -70,11 +70,16 @@ const reviews = [
 
 export default function RatingReview() {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
       <Sidebar />
+    </div>
 
-      <div className="flex-1 bg-gray-100">
-        <Navbar />
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="p-6">
           <h1 className="text-3xl font-bold mb-4">Rating Review</h1>
 
@@ -112,7 +117,7 @@ export default function RatingReview() {
           {/* Pagination */}
           <div className="mt-6 text-right text-sm text-gray-600">123Next Page</div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

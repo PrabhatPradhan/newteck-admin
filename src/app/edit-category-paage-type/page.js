@@ -43,7 +43,7 @@ export default function AddCategoryPageType() {
       <Navbar />
         <div className="p-6 max-w-4xl mx-auto">
           <div className="bg-white shadow-md rounded-lg p-6">
-            <h1 className="text-xl font-bold mb-4">Add Category Page Type</h1>
+            <h1 className="text-xl font-bold mb-4">Edit Category Page Type</h1>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block mb-1 font-medium">Category</label>
@@ -165,4 +165,3 @@ export default function AddCategoryPageType() {
     </div>
   );
 }
- 

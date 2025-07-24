@@ -19,16 +19,23 @@ const galleryData = [
 ];
 
 export default function Page() {
+  const hendelDelete=(category)=>{
+    const confirm=window.confirm(`are you sure you want to delete`);
+    if(confirm){
+      console.log(`delete ${category}`)
+    }
+  }
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
-        <Sidebar />
-      </div>
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
 
-      {/* Main Content */}
-      <div className="flex-1 ml-64 bg-gray-100">
-        <Navbar />
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="p-4">
           <h2 className="text-2xl font-bold mb-4">Gallarys</h2>
           <div className="overflow-x-auto">
@@ -75,7 +82,9 @@ export default function Page() {
                           <FaEdit />
                         </button>
                        </Link>
-                        <button className="text-red-600 hover:text-red-800 text-sm">
+                        <button className="text-red-600 hover:text-red-800 text-sm"
+                        onClick={()=> hendelDelete(item.ccategory)}
+                        >
                           <FaTrash />
                         </button>
                       </div>
@@ -86,7 +95,7 @@ export default function Page() {
             </table>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

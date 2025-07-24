@@ -17,12 +17,25 @@ const initialCities = [
 export default function CitiesPage() {
   const [cities] = useState(initialCities);
 
-  return (
-    <div className="flex min-h-screen">
-      <Sidebar />
+  const hendelDelete=(category)=>{
+    const confirm=window.confirm(`are you sure`);
 
-      <div className="flex-1 bg-gray-100">
-        <Navbar />
+    if(confirm){
+      console.log(`delete ${category}`)
+    }
+  }
+
+  return (
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
+
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="w-full p-6">
           <h2 className="text-2xl font-bold mb-4">Cities</h2>
 
@@ -59,7 +72,9 @@ export default function CitiesPage() {
                         <FiEdit className="w-5 h-5" />
                       </button>
                       </Link>
-                      <button className="text-red-600 hover:text-red-800">
+                      <button className="text-red-600 hover:text-red-800"
+                      onClick={()=> hendelDelete(city.category)}
+                      >
                         <FiTrash2 className="w-5 h-5" />
                       </button>
                     </td>
@@ -73,7 +88,7 @@ export default function CitiesPage() {
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

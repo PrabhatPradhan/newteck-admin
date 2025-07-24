@@ -44,13 +44,16 @@ export default function ViewSubcategoryPage() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen">
-      <div className="w-full lg:w-64 bg-gray-800 text-white">
-        <Sidebar />
-      </div>
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
 
-      <div className="flex-1 overflow-y-auto bg-gray-100">
-        <Navbar />
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="min-h-screen bg-gray-100 flex flex-col">
           {/* Header */}
           <div className="bg-white px-4 py-3 shadow flex items-center gap-3">
@@ -95,7 +98,7 @@ export default function ViewSubcategoryPage() {
                         </span>
                       </td>
                       <td className="px-4 py-3 flex gap-3 items-center text-blue-600">
-                       <Link href="/editbanner">
+                       <Link href="/edit-Subcategory">
                        <button title="Edit">
                           <FaEdit className="hover:text-blue-800" />
                         </button>
@@ -116,7 +119,7 @@ export default function ViewSubcategoryPage() {
             info@xyz.in
           </footer>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

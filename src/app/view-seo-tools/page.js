@@ -7,6 +7,12 @@ import { FaEdit, FaTrash } from "react-icons/fa"; // 👈 Import icons
 import Link from "next/link";
 
 export default function ViewSeo() {
+  const hendelDelete=(category)=>{
+    const confirm=window.confirm(`are you sure you want to delete`);
+    if(confirm){
+      console.log(`delete ${category}`)
+    }
+  }
   const seoPages = [
     "About",
     "AMC",
@@ -23,13 +29,16 @@ export default function ViewSeo() {
   ];
 
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar */}
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
       <Sidebar />
+    </div>
 
-      {/* Main Content */}
-      <div className="flex-1 bg-gray-100">
-        <Navbar />
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="p-6 w-full">
           <h1 className="text-3xl font-bold mb-6">View SEO</h1>
 
@@ -58,7 +67,9 @@ export default function ViewSeo() {
                           <FaEdit />
                         </button>
                        </Link>
-                      <button className="text-red-600 hover:text-red-800">
+                      <button className="text-red-600 hover:text-red-800"
+                      onClick={ ()=> hendelDelete(page.category)}
+                      >
                         <FaTrash />
                       </button>
                     </td>
@@ -73,7 +84,7 @@ export default function ViewSeo() {
             info@xyz.in
           </p>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

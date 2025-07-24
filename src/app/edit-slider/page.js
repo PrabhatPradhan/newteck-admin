@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Sidebar from "../../Components/Sidebar/Sidebar";
-import Navbar from "../../Components/Navbar/Navbar";
-
+import Sidebar from "../../Components/Sidebar/Sidebar"
+import Navbar from "../../Components/Navbar/Navbar"
 export default function AddSliderPage() {
   const [formData, setFormData] = useState({
     heading: "",
@@ -30,22 +29,24 @@ export default function AddSliderPage() {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Sidebar */}
-      <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
-        <Sidebar />
-      </div>
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
 
-      {/* Main Content */}
-      <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
-        {/* Navbar */}
-        <Navbar />
-        <div className="min-h-screen bg-gray-100 px-6 py-4">
-          <div className="bg-white p-6 rounded shadow w-full">
-            <h2 className="text-2xl font-bold mb-6">Add Slider</h2>
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
+        <div className="min-h-screen bg-gray-100 p-6">
+          <div className="max-w-2xl mx-auto bg-white p-6 rounded shadow">
+            <h2 className="text-2xl font-bold mb-6">Edit Slider</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Heading */}
               <div>
-                <label className="block text-sm font-medium mb-1">Heading</label>
+                <label className="block text-sm font-medium mb-1">
+                  Heading
+                </label>
                 <input
                   type="text"
                   name="heading"
@@ -58,7 +59,9 @@ export default function AddSliderPage() {
 
               {/* Description */}
               <div>
-                <label className="block text-sm font-medium mb-1">Description</label>
+                <label className="block text-sm font-medium mb-1">
+                  Description
+                </label>
                 <textarea
                   name="description"
                   value={formData.description}
@@ -84,7 +87,9 @@ export default function AddSliderPage() {
 
               {/* Image ALT */}
               <div>
-                <label className="block text-sm font-medium mb-1">Image ALT</label>
+                <label className="block text-sm font-medium mb-1">
+                  Image ALT
+                </label>
                 <input
                   type="text"
                   name="imageAlt"

@@ -63,12 +63,16 @@ export default function AddBlog() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen">
-      <div className="w-full lg:w-64 bg-gray-800 text-white">
-        <Sidebar />
-      </div>
-      <div className="flex-1 overflow-y-auto bg-gray-100">
-        <Navbar />
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
+
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="min-h-screen p-6">
           <div className="max-w-5xl mx-auto bg-white p-6 shadow-md rounded-md">
             <h2 className="text-2xl font-bold mb-6">Add Blog</h2>
@@ -170,7 +174,7 @@ export default function AddBlog() {
             <div className="mt-6 text-center text-gray-500">info@xyz.in</div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

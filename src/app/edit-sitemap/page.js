@@ -28,13 +28,16 @@ export default function AddSitemap() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen">
-      <div className="w-full lg:w-64 bg-gray-800 text-white">
-        <Sidebar />
-      </div>
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
 
-      <div className="flex-1 overflow-y-auto bg-gray-100">
-        <Navbar />
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
     <div className="max-w-4xl w-full mx-auto bg-white p-6 rounded shadow-md mt-4">
       <h2 className="text-2xl font-semibold mb-6">Edit sitemap</h2>
 
@@ -112,6 +115,6 @@ export default function AddSitemap() {
       </form>
 
       <p className="mt-6 text-sm text-gray-500">info@xyz.in</p>
-    </div></div></div>
+    </div></main></div>
   );
 }

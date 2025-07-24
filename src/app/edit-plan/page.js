@@ -28,15 +28,16 @@ export default function EditPlanPage() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen">
-      {/* Sidebar */}
-      <div className="w-full lg:w-64 bg-gray-800 text-white">
-        <Sidebar />
-      </div>
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
 
-      {/* Main Content */}
-      <div className="flex-1 overflow-y-auto bg-gray-100">
-        <Navbar />
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="w-full px-4 sm:px-6 lg:px-8 py-10">
           <div className="bg-white shadow-md rounded-xl p-6">
             <h2 className="text-2xl font-bold mb-6">Edit Plan</h2>
@@ -117,7 +118,7 @@ export default function EditPlanPage() {
             </form>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

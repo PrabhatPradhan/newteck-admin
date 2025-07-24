@@ -37,12 +37,15 @@ export default function EditCategoryPage() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen">
-    <div className="w-full lg:w-64 bg-gray-800 text-white">
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
       <Sidebar />
     </div>
 
-    <div className="flex-1 overflow-y-auto bg-gray-100">
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
       <Navbar />
     <div className="flex flex-col min-h-screen bg-gray-50">
       <main className="flex-grow w-full max-w-3xl mx-auto mt-10 px-4">
@@ -125,6 +128,6 @@ export default function EditCategoryPage() {
       <footer className="text-center p-4 text-gray-500 text-sm">
         info@xyz.in
       </footer>
-    </div></div></div>
+    </div></main></div>
   );
 }

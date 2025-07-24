@@ -6,9 +6,8 @@ import Navbar from "../../Components/Navbar/Navbar";
 
 export default function AddSubcategoryPage() {
   const [formData, setFormData] = useState({
-    city: '',
+    category: '',
     name: '',
-    title: '',
     problemPoints: '',
     imageIcon: null,
     imageIconAlt: '',
@@ -18,6 +17,8 @@ export default function AddSubcategoryPage() {
     image2Alt: '',
     description1: '',
     description2: '',
+    banner: null,
+    bannerAlt: '',
     metaTitle: '',
     metaKeywords: '',
     metaAuthor: '',
@@ -49,14 +50,6 @@ export default function AddSubcategoryPage() {
     robots1: '',
     robots2: '',
     script: '',
-    rateTitle: '',
-    rateNumber: '',
-    rateTitle2: '',
-    fiveStarPercent: '',
-    fourStarPercent: '',
-    threeStarPercent: '',
-    twoStarPercent: '',
-    oneStarPercent: '',
     status: 'Active',
   });
 
@@ -89,36 +82,90 @@ export default function AddSubcategoryPage() {
       <Navbar />
         <div className="min-h-screen p-6">
           <div className="max-w-5xl mx-auto bg-white p-6 shadow-md rounded-md">
-            <h2 className="text-2xl font-bold mb-6">Add Subcategory</h2>
+            <h2 className="text-2xl font-bold mb-6">Edit Subcategory</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Basic Fields */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input name="city" placeholder="Add city" onChange={handleChange} className={inputStyle} />
-                <input name="name" placeholder="Name" onChange={handleChange} className={inputStyle} />
-                <input name="title" placeholder="Title" onChange={handleChange} className={inputStyle} />
-                <input name="problemPoints" placeholder="Points (## separated)" onChange={handleChange} className={inputStyle} />
-                <input type="file" name="imageIcon" onChange={handleChange} className="w-full" />
-                <input name="imageIconAlt" placeholder="Logo ALT" onChange={handleChange} className={inputStyle} />
-                <input type="file" name="image1" onChange={handleChange} className="w-full" />
-                <input name="image1Alt" placeholder="Image1 ALT" onChange={handleChange} className={inputStyle} />
-                <input type="file" name="image2" onChange={handleChange} className="w-full" />
-                <input name="image2Alt" placeholder="Image2 ALT" onChange={handleChange} className={inputStyle} />
+                <div>
+                  <label className="block mb-1 font-medium">Category</label>
+                  <select name="category" onChange={handleChange} className={inputStyle}>
+                    <option>Select category</option>
+                    <option>Electronics</option>
+                    <option>Home</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block mb-1 font-medium">Name</label>
+                  <input name="name" onChange={handleChange} className={inputStyle} />
+                </div>
+                <div className="md:col-span-2">
+                  <label className="block mb-1 font-medium">Problem Points (## separated)</label>
+                  <input name="problemPoints" onChange={handleChange} className={inputStyle} />
+                </div>
+                <div>
+                  <label className="block mb-1 font-medium">Image Icon</label>
+                  <input type="file" name="imageIcon" onChange={handleChange} className="w-full" />
+                </div>
+                <div>
+                  <label className="block mb-1 font-medium">Image Icon ALT</label>
+                  <input name="imageIconAlt" onChange={handleChange} className={inputStyle} />
+                </div>
+                <div>
+                  <label className="block mb-1 font-medium">Image 1</label>
+                  <input type="file" name="image1" onChange={handleChange} className="w-full" />
+                </div>
+                <div>
+                  <label className="block mb-1 font-medium">Image 1 ALT</label>
+                  <input name="image1Alt" onChange={handleChange} className={inputStyle} />
+                </div>
+                <div>
+                  <label className="block mb-1 font-medium">Image 2</label>
+                  <input type="file" name="image2" onChange={handleChange} className="w-full" />
+                </div>
+                <div>
+                  <label className="block mb-1 font-medium">Image 2 ALT</label>
+                  <input name="image2Alt" onChange={handleChange} className={inputStyle} />
+                </div>
               </div>
-              <textarea name="description1" placeholder="Description 1" onChange={handleChange} className={inputStyle} />
-              <textarea name="description2" placeholder="Description 2" onChange={handleChange} className={inputStyle} />
+
+              {/* Descriptions */}
+              <div>
+                <label className="block mb-1 font-medium">Description 1</label>
+                <textarea name="description1" onChange={handleChange} className={inputStyle} />
+              </div>
+              <div>
+                <label className="block mb-1 font-medium">Description 2</label>
+                <textarea name="description2" onChange={handleChange} className={inputStyle} />
+              </div>
+
+              {/* Banner */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input name="metaTitle" placeholder="Meta Title" onChange={handleChange} className={inputStyle} />
-                <input name="metaKeywords" placeholder="Meta Keywords" onChange={handleChange} className={inputStyle} />
-                <input name="metaAuthor" placeholder="Meta Author" onChange={handleChange} className={inputStyle} />
-                <input name="metaDescription" placeholder="Meta Description" onChange={handleChange} className={inputStyle} />
-                <input name="canonical" placeholder="Canonical" onChange={handleChange} className={inputStyle} />
+                <div>
+                  <label className="block mb-1 font-medium">Banner</label>
+                  <input type="file" name="banner" onChange={handleChange} className="w-full" />
+                </div>
+                <div>
+                  <label className="block mb-1 font-medium">Banner ALT</label>
+                  <input name="bannerAlt" onChange={handleChange} className={inputStyle} />
+                </div>
               </div>
-              <h3 className="text-lg font-semibold mt-4">Open Graph</h3>
+
+              {/* Meta Tags */}
+              <h3 className="text-lg font-semibold mt-4">Meta Tags</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {["metaTitle", "metaKeywords", "metaAuthor", "metaDescription", "canonical"].map((field) => (
+                  <input key={field} name={field} placeholder={field.replace(/([A-Z])/g, ' $1')} onChange={handleChange} className={inputStyle} />
+                ))}
+              </div>
+
+              {/* Open Graph */}
+              <h3 className="text-lg font-semibold mt-4">Open Graph Tags</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input name="ogTitle" placeholder="OG:Title" onChange={handleChange} className={inputStyle} />
                 <input name="ogDescription" placeholder="OG:Description" onChange={handleChange} className={inputStyle} />
                 <input name="ogURL" placeholder="OG:URL" onChange={handleChange} className={inputStyle} />
                 <input type="file" name="ogImage" onChange={handleChange} className="w-full" />
-                <input name="ogType" placeholder="OG:TYPE" onChange={handleChange} className={inputStyle} />
+                <input name="ogType" placeholder="OG:Type" onChange={handleChange} className={inputStyle} />
                 <input name="ogSiteName" placeholder="OG:Site Name" onChange={handleChange} className={inputStyle} />
                 <input name="ogLocale" placeholder="OG:Locale" onChange={handleChange} className={inputStyle} />
                 <input name="articlePublisher" placeholder="Article:Publisher" onChange={handleChange} className={inputStyle} />
@@ -130,6 +177,8 @@ export default function AddSubcategoryPage() {
                 <input name="ogImageAlt" placeholder="OG:Image Alt" onChange={handleChange} className={inputStyle} />
                 <input name="ogImageType" placeholder="OG:Image Type" onChange={handleChange} className={inputStyle} />
               </div>
+
+              {/* Twitter Tags */}
               <h3 className="text-lg font-semibold mt-4">Twitter Tags</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input name="twitterCard" placeholder="Twitter Card" onChange={handleChange} className={inputStyle} />
@@ -141,25 +190,35 @@ export default function AddSubcategoryPage() {
                 <input name="twitterSite" placeholder="Twitter Site" onChange={handleChange} className={inputStyle} />
                 <input name="twitterCreator" placeholder="Twitter Creator" onChange={handleChange} className={inputStyle} />
               </div>
-              <input name="robots1" placeholder="Robots 1" onChange={handleChange} className={inputStyle} />
-              <input name="robots2" placeholder="Robots 2" onChange={handleChange} className={inputStyle} />
-              <textarea name="script" placeholder="Script" onChange={handleChange} className={inputStyle} />
-              <input name="rateTitle" placeholder="Rate Title" onChange={handleChange} className={inputStyle} />
-              <input name="rateNumber" placeholder="Rate Number" onChange={handleChange} className={inputStyle} />
-              <input name="rateTitle2" placeholder="Rate Title 2" onChange={handleChange} className={inputStyle} />
-              <input name="fiveStarPercent" placeholder="Five Star Percent" onChange={handleChange} className={inputStyle} />
-              <input name="fourStarPercent" placeholder="Four Star Percent" onChange={handleChange} className={inputStyle} />
-              <input name="threeStarPercent" placeholder="Three Star Percent" onChange={handleChange} className={inputStyle} />
-              <input name="twoStarPercent" placeholder="Two Star Percent" onChange={handleChange} className={inputStyle} />
-              <input name="oneStarPercent" placeholder="One Star Percent" onChange={handleChange} className={inputStyle} />
-              <select name="status" onChange={handleChange} className={inputStyle}>
-                <option>Active</option>
-                <option>Inactive</option>
-              </select>
-              <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
-                Add Subcategory
-              </button>
+
+              {/* Robots and Script */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input name="robots1" placeholder="Robots 1" onChange={handleChange} className={inputStyle} />
+                <input name="robots2" placeholder="Robots 2" onChange={handleChange} className={inputStyle} />
+              </div>
+              <div>
+                <label className="block mb-1 font-medium">Script</label>
+                <textarea name="script" onChange={handleChange} className={inputStyle} />
+              </div>
+
+              {/* Status */}
+              <div>
+                <label className="block mb-1 font-medium">Status</label>
+                <select name="status" onChange={handleChange} className={inputStyle}>
+                  <option>Active</option>
+                  <option>Inactive</option>
+                </select>
+              </div>
+
+              {/* Submit Button */}
+              <div className="mt-4">
+                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                  Add Subcategory
+                </button>
+              </div>
             </form>
+
+            {/* Footer */}
             <div className="mt-6 text-center text-gray-500">info@xyz.in</div>
           </div>
         </div>

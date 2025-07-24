@@ -6,13 +6,16 @@ import Navbar from "../../Components/Navbar/Navbar"
 
 export default function AddGallery() {
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar */}
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
       <Sidebar />
+    </div>
 
-      {/* Main Content */}
-      <div className="flex-1 bg-gray-100">
-        <Navbar />
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="p-6 w-full">
           <h1 className="text-3xl font-bold mb-6">Add Gallery</h1>
 
@@ -75,7 +78,7 @@ export default function AddGallery() {
           {/* Footer Info */}
           <p className="text-center text-sm text-gray-500 mt-6">info@xyz.in</p>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

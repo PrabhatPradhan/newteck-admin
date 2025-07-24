@@ -14,7 +14,7 @@ import avtar from "../../../public/avatar5.png";
 
 export default function Navbar() {
   const [showPopup, setShowPopup] = useState(false);
-  const [showNotifications, setShowNotifications] = useState(false);
+  
   const [showUserMenu, setShowUserMenu] = useState(false);
   const userMenuRef = useRef<HTMLDivElement>(null);
 
@@ -42,14 +42,7 @@ export default function Navbar() {
     setShowPopup(false);
   };
 
-  const notifications = [
-    "Change Your font style",
-    "Check the system status",
-    "Add more admin...",
-    "Add more clients and order",
-    "New updates available!",
-     
-  ];
+  
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -68,33 +61,10 @@ export default function Navbar() {
         <h1 className="text-lg sm:text-xl font-semibold"> </h1>
         <div className="flex items-center gap-4 sm:gap-6">
           {/* Reminder Icon */}
-          <button onClick={() => setShowPopup(true)}>
-            <FaClipboardList className="w-5 h-5 cursor-pointer" />
-          </button>
+           
 
           {/* Notification Bell */}
-          <div className="relative">
-            <button onClick={() => setShowNotifications(!showNotifications)}>
-              <FaBell className="w-5 h-5 cursor-pointer" />
-              <span className="absolute -top-2 -right-2 bg-yellow-400 text-xs text-black rounded-full w-5 h-5 flex items-center justify-center">
-                {notifications.length}
-              </span>
-            </button>
-
-            {showNotifications && (
-              <div className="absolute right-0 mt-2 w-64 sm:w-72 h-60 sm:h-72 text-black bg-green-100 border border-green-300 overflow-y-auto shadow-lg rounded-lg z-50">
-                {notifications.map((note, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 px-4 py-2 border-b border-green-300 hover:bg-green-200 transition text-sm"
-                  >
-                    <FaCircle className="text-teal-600 text-[8px]" />
-                    <span>{note}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+         
 
           {/* User Avatar */}
           <div className="relative" ref={userMenuRef}>
@@ -107,7 +77,7 @@ export default function Navbar() {
 
             {showUserMenu && (
               <div className="absolute right-0 mt-2 w-44 sm:w-48 bg-white text-black border border-gray-300 shadow-lg rounded-md z-50">
-                <Link href="/userprofile">
+                <Link href="/viewProfile">
                   <button className="flex items-center gap-2 w-full text-left px-4 py-2 hover:bg-blue-100">
                     <FaUser className="text-blue-600" /> View Profile
                   </button>

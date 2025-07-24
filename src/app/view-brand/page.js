@@ -31,12 +31,24 @@ const brandList = [
 
 export default function Page() {
   const [brands] = useState(brandList);
+  const hendelDelete=(category)=>{
+    const confirm=window.confirm(`are you sure`);
+    if(confirm){
+      console.log(`delete ${category}`)
+    }
+  }
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
       <Sidebar />
-      <div className="flex-1 bg-gray-100">
-        <Navbar />
+    </div>
+
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="p-6 w-full">
           <h2 className="text-2xl font-bold mb-4">Brands</h2>
           <div className="overflow-x-auto bg-white shadow-md rounded-lg">
@@ -74,7 +86,9 @@ export default function Page() {
                         <FiEdit />
                       </button>
                       </Link>
-                      <button className="text-red-600 hover:text-red-800" title="Delete">
+                      <button className="text-red-600 hover:text-red-800" title="Delete"
+                      onClick={()=> hendelDelete(brand.category)}
+                      >
                         <FiTrash2 />
                       </button>
                     </td>
@@ -87,7 +101,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

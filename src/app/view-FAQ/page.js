@@ -29,15 +29,25 @@ const faqs = [
   // Add more as needed...
 ];
 
+const hendelDelete=(category)=>{
+  const confirm=window.confirm(`are you sure `);
+  if(confirm){
+    console.log(`Delete ${category}`)
+  }
+}
+
 export default function FaqsTable() {
   return (
-    <div className="flex flex-col lg:flex-row h-screen">
-      <div className="w-full lg:w-64 bg-gray-800 text-white">
-        <Sidebar />
-      </div>
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
 
-      <div className="flex-1 overflow-y-auto bg-gray-100">
-        <Navbar />
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="p-6 max-w-7xl mx-auto bg-white mt-6 rounded shadow">
           <h2 className="text-2xl font-bold mb-4">FAQs</h2>
           <div className="overflow-x-auto">
@@ -67,7 +77,9 @@ export default function FaqsTable() {
                       </button>
                       </Link>
                     
-                      <button className="text-red-600 hover:text-red-800">
+                      <button className="text-red-600 hover:text-red-800"
+                      onClick={()=> hendelDelete(faq.category)}
+                      >
                         <FaTrash />
                       </button>
                     </td>
@@ -78,7 +90,7 @@ export default function FaqsTable() {
             <div className="mt-4 text-sm text-gray-500">info@xyz.in</div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

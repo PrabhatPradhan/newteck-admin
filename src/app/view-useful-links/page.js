@@ -20,14 +20,24 @@ const initialLinks = [
 export default function UsefulLinksPage() {
   const [links] = useState(initialLinks);
 
-  return (
-    <div className="flex flex-col lg:flex-row h-screen">
-      <div className="w-full lg:w-64 bg-gray-800 text-white">
-        <Sidebar />
-      </div>
+  const hendelDelete=(category)=>{
+    const confirm=window.confirm(`are you sure `);
+    if(confirm){
+      console.log(`Delete ${category}`)
+    }
+  }
 
-      <div className="flex-1 overflow-y-auto bg-gray-100">
-        <Navbar />
+  return (
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
+
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="w-full p-6">
           <h2 className="text-2xl font-bold mb-4">Useful Links</h2>
 
@@ -61,7 +71,9 @@ export default function UsefulLinksPage() {
                       </button>
                       </Link>
                      
-                      <button className="text-red-600 hover:text-red-800">
+                      <button className="text-red-600 hover:text-red-800"  
+                      onClick={()=> hendelDelete(item.category)}
+                      >
                         <FaTrash />
                       </button>
                     </td>
@@ -73,7 +85,7 @@ export default function UsefulLinksPage() {
             <div className="p-4 text-sm text-gray-500 text-right">info@xyz.in</div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

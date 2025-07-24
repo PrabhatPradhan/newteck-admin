@@ -14,14 +14,23 @@ export default function CategoryList() {
     // Add more categories as needed
   ];
 
+  const hendelDelete=(category)=>{
+    const confirm=window.confirm(`are you sure `);
+    if(confirm){
+      console.log(`Delete ${category}`)
+    }
+  }
   return (
-    <div className="flex flex-col lg:flex-row h-screen">
-      <div className="w-full lg:w-64 bg-gray-800 text-white">
-        <Sidebar />
-      </div>
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
 
-      <div className="flex-1 overflow-y-auto bg-gray-100">
-        <Navbar />
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="w-full p-6">
           <h2 className="text-2xl font-bold mb-4">Categories</h2>
 
@@ -58,7 +67,9 @@ export default function CategoryList() {
                       </button>
                       </Link>
                       
-                      <button className="text-red-600 hover:text-red-800">
+                      <button className="text-red-600 hover:text-red-800"
+                      onClick={()=> hendelDelete(cat.category)}
+                      >
                         <FaTrash className="inline-block" />
                       </button>
                     </td>
@@ -70,7 +81,7 @@ export default function CategoryList() {
 
           <div className="mt-4 text-sm text-gray-500">info@xyz.in</div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

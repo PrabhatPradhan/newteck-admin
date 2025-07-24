@@ -75,7 +75,7 @@ export default function AddSubcategoryPage() {
       <Navbar />
         <div className="min-h-screen p-6">
           <div className="max-w-5xl mx-auto bg-white p-6 shadow-md rounded-md">
-            <h2 className="text-2xl font-bold mb-6">Add Subcategory</h2>
+            <h2 className="text-2xl font-bold mb-6">Edit Subcategory</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>

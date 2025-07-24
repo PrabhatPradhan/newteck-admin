@@ -6,15 +6,16 @@ import Navbar from "../../Components/Navbar/Navbar";
 
 export default function AddPlanPage() {
   return (
-    <div className="flex h-screen">
-      {/* Sidebar */}
-      <div className="w-64 bg-gray-800 text-white">
-        <Sidebar />
-      </div>
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+      <Sidebar />
+    </div>
 
-      {/* Main Content */}
-      <div className="flex-1 bg-gray-100">
-        <Navbar />
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
 
         <div className="p-6">
           <h1 className="text-2xl font-bold mb-6">Add Plan</h1>
@@ -84,7 +85,7 @@ export default function AddPlanPage() {
             info@xyz.in
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

@@ -31,12 +31,15 @@ export default function EditCategoryPageType() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen">
-    <div className="w-full lg:w-64 bg-gray-800 text-white">
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
       <Sidebar />
     </div>
 
-    <div className="flex-1 overflow-y-auto bg-gray-100">
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
       <Navbar />
     <div className="w-full mx-auto p-6 bg-white shadow-md rounded-xl mt-10">
       <h2 className="text-2xl font-bold mb-6">Edit Category Page Type</h2>
@@ -159,6 +162,6 @@ export default function EditCategoryPageType() {
           Save Changes
         </button>
       </form>
-    </div>  </div>  </div>
+    </div>  </main>  </div>
   );
 }

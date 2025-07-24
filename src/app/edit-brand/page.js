@@ -6,10 +6,16 @@ import Navbar from "@/Components/Navbar/Navbar";
 
 export default function AddBrand() {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
       <Sidebar />
-      <div className="flex-1 bg-gray-100">
-        <Navbar />
+    </div>
+
+    {/* Main Content */}
+    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+      {/* Navbar */}
+      <Navbar />
         <div className="p-6 w-full max-w-7xl mx-auto">
           <h1 className="text-2xl font-bold mb-4">Edit Brand</h1>
 
@@ -142,7 +148,7 @@ export default function AddBrand() {
             <div className="text-right text-sm text-gray-500">info@xyz.in</div>
           </form>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
