@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
-
+import { FiFile } from "react-icons/fi";
 export default function AddSliderPage() {
   const [formData, setFormData] = useState({
     heading: "",
@@ -30,22 +30,24 @@ export default function AddSliderPage() {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Sidebar */}
-      <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
-        <Sidebar />
-      </div>
-
-      {/* Main Content */}
-      <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
-        {/* Navbar */}
-        <Navbar />
+    {/* Sidebar */}
+    <div className="fixed md:static top-0 left-0 z-40 h-screen w-1">
+      <Sidebar />
+    </div>
+  
+    {/* Main Content */}
+    <main className="flex-1 bg-gray-100 overflow-y-auto max-h-screen md:ml-64">
+      {/* Navbar */}
+      <Navbar />
         <div className="min-h-screen bg-gray-100 px-6 py-4">
           <div className="bg-white p-6 rounded shadow w-full">
             <h2 className="text-2xl font-bold mb-6">Add Slider</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Heading */}
               <div>
-                <label className="block text-sm font-medium mb-1">Heading</label>
+                <label className="block text-sm font-medium mb-1">
+                  Heading
+                </label>
                 <input
                   type="text"
                   name="heading"
@@ -58,7 +60,9 @@ export default function AddSliderPage() {
 
               {/* Description */}
               <div>
-                <label className="block text-sm font-medium mb-1">Description</label>
+                <label className="block text-sm font-medium mb-1">
+                  Description
+                </label>
                 <textarea
                   name="description"
                   value={formData.description}
@@ -71,20 +75,28 @@ export default function AddSliderPage() {
 
               {/* Image */}
               <div>
-                <label className="block text-sm font-medium mb-1">Image</label>
-                <input
-                  type="file"
-                  name="image"
-                  accept="image/*"
-                  onChange={handleChange}
-                  className="w-full"
-                  required
-                />
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Image Icon
+                </label>
+
+                <label className="flex items-center gap-3 px-4 py-2 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                  <FiFile className="text-blue-600 text-xl" />
+                  <span className="text-gray-600">Choose an image...</span>
+                  <input
+                    type="file"
+                    name="imageIcon"
+                    accept="image/*"
+                    onChange={handleChange}
+                    className="hidden"
+                  />
+                </label>
               </div>
 
               {/* Image ALT */}
               <div>
-                <label className="block text-sm font-medium mb-1">Image ALT</label>
+                <label className="block text-sm font-medium mb-1">
+                  Image ALT
+                </label>
                 <input
                   type="text"
                   name="imageAlt"

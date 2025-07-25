@@ -2,7 +2,7 @@
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
 import { useState } from "react";
-
+import { FiFile } from "react-icons/fi";
 export default function AddCategoryPageType() {
   const [form, setForm] = useState({
     category: "",
@@ -32,15 +32,15 @@ export default function AddCategoryPageType() {
 
   return (
     <div className="flex h-screen overflow-hidden">
-    {/* Sidebar */}
-    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
-      <Sidebar />
-    </div>
+  {/* Sidebar */}
+  <div className="fixed md:static top-0 left-0 z-40 h-screen w-1">
+    <Sidebar />
+  </div>
 
-    {/* Main Content */}
-    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
-      {/* Navbar */}
-      <Navbar />
+  {/* Main Content */}
+  <main className="flex-1 bg-gray-100 overflow-y-auto max-h-screen md:ml-64">
+    {/* Navbar */}
+    <Navbar />
         <div className="p-6 max-w-4xl mx-auto">
           <div className="bg-white shadow-md rounded-lg p-6">
             <h1 className="text-xl font-bold mb-4">Add Category Page Type</h1>
@@ -93,13 +93,21 @@ export default function AddCategoryPageType() {
               </div>
 
               <div>
-                <label className="block mb-1 font-medium">Image 1</label>
-                <input
-                  type="file"
-                  name="image"
-                  onChange={handleChange}
-                  className="w-full"
-                />
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Image Icon
+                </label>
+
+                <label className="flex items-center gap-3 px-4 py-2 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                  <FiFile className="text-blue-600 text-xl" />
+                  <span className="text-gray-600">Choose an image...</span>
+                  <input
+                    type="file"
+                    name="imageIcon"
+                    accept="image/*"
+                    onChange={handleChange}
+                    className="hidden"
+                  />
+                </label>
               </div>
 
               <div>
@@ -165,4 +173,3 @@ export default function AddCategoryPageType() {
     </div>
   );
 }
- 

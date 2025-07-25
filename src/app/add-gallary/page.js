@@ -1,19 +1,19 @@
 "use client";
 
 import React from "react";
-import Sidebar from "../../Components/Sidebar/Sidebar"
-import Navbar from "../../Components/Navbar/Navbar"
-
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import Navbar from "../../Components/Navbar/Navbar";
+import { FiFile } from "react-icons/fi";
 export default function AddGallery() {
   return (
     <div className="flex h-screen overflow-hidden">
     {/* Sidebar */}
-    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
+    <div className="fixed md:static top-0 left-0 z-40 h-screen w-1">
       <Sidebar />
     </div>
-
+  
     {/* Main Content */}
-    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
+    <main className="flex-1 bg-gray-100 overflow-y-auto max-h-screen md:ml-64">
       {/* Navbar */}
       <Navbar />
         <div className="p-6 w-full">
@@ -21,14 +21,22 @@ export default function AddGallery() {
 
           <form className="bg-white shadow-md rounded-lg p-6 w-full">
             {/* Image Upload */}
-            <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Image (Select Image If Image)
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Image Icon
               </label>
-              <input
-                type="file"
-                className="block w-full text-sm text-gray-900 bg-white border border-gray-300 rounded-md cursor-pointer"
-              />
+
+              <label className="flex items-center gap-3 px-4 py-2 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                <FiFile className="text-blue-600 text-xl" />
+                <span className="text-gray-600">Choose an image...</span>
+                <input
+                  type="file"
+                  name="imageIcon"
+                  accept="image/*"
+                   
+                  className="hidden"
+                />
+              </label>
             </div>
 
             {/* Image ALT */}

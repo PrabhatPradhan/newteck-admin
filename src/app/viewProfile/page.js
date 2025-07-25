@@ -35,15 +35,16 @@ export default function ViewProfile() {
   };
 
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <div className="w-64 fixed top-0 left-0 h-screen bg-white shadow z-10">
-        <Sidebar />
-      </div>
-
-      {/* Main Content */}
-      <div className="flex-1 ml-64 bg-gray-100">
-        <Navbar />
+    <div className="flex h-screen overflow-hidden">
+    {/* Sidebar */}
+    <div className="fixed md:static top-0 left-0 z-40 h-screen w-1">
+      <Sidebar />
+    </div>
+  
+    {/* Main Content */}
+    <main className="flex-1 bg-gray-100 overflow-y-auto max-h-screen md:ml-64">
+      {/* Navbar */}
+      <Navbar />
 
         <div className="p-6 max-w-4xl mx-auto space-y-8">
           {/* Profile Info */}
@@ -118,7 +119,7 @@ export default function ViewProfile() {
             </form>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

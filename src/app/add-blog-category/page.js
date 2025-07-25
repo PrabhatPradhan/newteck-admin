@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
-
+import { FiFile } from "react-icons/fi";
 export default function AddCategoryPage() {
   const [name, setName] = useState("");
   const [iconAlt, setIconAlt] = useState("");
@@ -26,17 +26,17 @@ export default function AddCategoryPage() {
 
   return (
     <div className="flex h-screen overflow-hidden">
-    {/* Sidebar */}
-    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
-      <Sidebar />
-    </div>
+  {/* Sidebar */}
+  <div className="fixed md:static top-0 left-0 z-40 h-screen w-1">
+    <Sidebar />
+  </div>
 
-    {/* Main Content */}
-    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
-      {/* Navbar */}
-      <Navbar />
+  {/* Main Content */}
+  <main className="flex-1 bg-gray-100 overflow-y-auto max-h-screen md:ml-64">
+    {/* Navbar */}
+    <Navbar />
         <div className="w-full p-6">
-          <h2 className="text-2xl font-bold mb-4">Add Category</h2>
+          <h2 className="text-2xl font-bold mb-4">Add Blog Category</h2>
 
           <form
             onSubmit={handleSubmit}
@@ -54,18 +54,28 @@ export default function AddCategoryPage() {
               />
             </div>
 
-            <div className="mb-4 w-full">
-              <label className="block text-sm font-semibold mb-1">Image Icon</label>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={(e) => setImageIcon(e.target.files[0])}
-                className="w-full"
-              />
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Image Icon
+              </label>
+
+              <label className="flex items-center gap-3 px-4 py-2 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                <FiFile className="text-blue-600 text-xl" />
+                <span className="text-gray-600">Choose an image...</span>
+                <input
+                  type="file"
+                  name="imageIcon"
+                  accept="image/*"
+                  
+                  className="hidden"
+                />
+              </label>
             </div>
 
             <div className="mb-4 w-full">
-              <label className="block text-sm font-semibold mb-1">Image ALT</label>
+              <label className="block text-sm font-semibold mb-1">
+                Image ALT
+              </label>
               <input
                 type="text"
                 value={iconAlt}
@@ -91,7 +101,7 @@ export default function AddCategoryPage() {
               type="submit"
               className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
             >
-              Add Category
+              Add  
             </button>
 
             <div className="mt-4 text-sm text-gray-500">info@xyz.in</div>

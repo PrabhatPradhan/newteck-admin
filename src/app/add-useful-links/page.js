@@ -80,15 +80,15 @@ export default function AddUsefulLinkPage() {
 
   return (
     <div className="flex h-screen overflow-hidden">
-    {/* Sidebar */}
-    <div className="w-64 h-screen fixed left-0 top-0 bg-white shadow-md z-10">
-      <Sidebar />
-    </div>
+  {/* Sidebar */}
+  <div className="fixed md:static top-0 left-0 z-40 h-screen w-1">
+    <Sidebar />
+  </div>
 
-    {/* Main Content */}
-    <main className="flex-1 ml-64 bg-gray-100 overflow-y-auto max-h-screen">
-      {/* Navbar */}
-      <Navbar />
+  {/* Main Content */}
+  <main className="flex-1 bg-gray-100 overflow-y-auto max-h-screen md:ml-64">
+    {/* Navbar */}
+    <Navbar />
         <div className="min-h-screen p-6">
           <div className="max-w-6xl mx-auto bg-white p-6 shadow-md rounded-md">
             <h2 className="text-2xl font-bold mb-6">Add Useful Link</h2>
