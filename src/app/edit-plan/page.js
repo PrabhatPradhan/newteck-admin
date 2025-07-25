@@ -10,7 +10,7 @@ export default function EditPlanPage() {
     duration: '1 YEAR',
     price: '2999',
     status: 'Active',
-    email: 'info@xyz.in',
+    email: 'Webideainfotech',
   });
 
   const handleChange = (e) => {

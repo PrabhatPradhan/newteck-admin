@@ -84,7 +84,7 @@ export default function CitiesPage() {
             </table>
 
             <div className="p-4 text-sm text-gray-500 text-right">
-              info@xyz.in
+              Webideainfotech
             </div>
           </div>
         </div>

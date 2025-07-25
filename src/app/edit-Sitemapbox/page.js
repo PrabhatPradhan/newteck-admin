@@ -63,7 +63,7 @@ export default function AddSitemapBox() {
         </button>
       </form>
 
-      <p className="mt-6 text-sm text-gray-500">info@xyz.in</p>
+      <p className="mt-6 text-sm text-gray-500">Webideainfotech</p>
     </div>  </main>  </div>
   );
 }

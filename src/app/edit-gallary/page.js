@@ -9,7 +9,7 @@ export default function EditGalleryPage() {
     imageAlt: 'Tv Repair Mane',
     youtubeId: '',
     status: 'Active',
-    email: 'info@xyz.in',
+    email: 'Webideainfotech',
   });
 
   const handleChange = (e) => {

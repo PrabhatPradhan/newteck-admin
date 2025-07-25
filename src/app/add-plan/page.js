@@ -82,7 +82,7 @@ export default function AddPlanPage() {
 
           {/* Footer */}
           <div className="text-center text-sm text-gray-500 mt-6">
-            info@xyz.in
+          Webideainfotech
           </div>
         </div>
       </main>

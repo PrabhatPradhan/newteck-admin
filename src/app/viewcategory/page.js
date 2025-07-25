@@ -111,7 +111,7 @@ export default function ViewCategoryPage() {
 
           {/* Footer */}
           <footer className="bg-white border-t text-center text-gray-600 py-3">
-            info@xyz.in
+            Webideainfotech
           </footer>
         </div>
       </main>

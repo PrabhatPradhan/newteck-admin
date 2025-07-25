@@ -118,7 +118,7 @@ export default function AddFAQ() {
             </div>
 
             {/* Info */}
-            <p className="text-sm text-gray-500">info@xyz.in</p>
+            <p className="text-sm text-gray-500">Webideainfotech</p>
           </form>
         </div>
       </main>

@@ -84,7 +84,7 @@ export default function AddGallery() {
           </form>
 
           {/* Footer Info */}
-          <p className="text-center text-sm text-gray-500 mt-6">info@xyz.in</p>
+          <p className="text-center text-sm text-gray-500 mt-6">Webideainfotech</p>
         </div>
       </main>
     </div>

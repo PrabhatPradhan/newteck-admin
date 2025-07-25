@@ -140,7 +140,7 @@ export default function Page() {
 
       {/* Footer */}
       <footer className="text-center p-4 text-gray-500 text-sm">
-        info@xyz.in
+        Webideainfotech
       </footer>
     </div>  </main>  </div>
   );

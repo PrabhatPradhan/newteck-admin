@@ -82,7 +82,7 @@ export default function UsefulLinksPage() {
               </tbody>
             </table>
 
-            <div className="p-4 text-sm text-gray-500 text-right">info@xyz.in</div>
+            <div className="p-4 text-sm text-gray-500 text-right">Webideainfotech</div>
           </div>
         </div>
       </main>

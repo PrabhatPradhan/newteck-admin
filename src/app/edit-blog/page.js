@@ -171,7 +171,7 @@ export default function AddBlog() {
                 </button>
               </div>
             </form>
-            <div className="mt-6 text-center text-gray-500">info@xyz.in</div>
+            <div className="mt-6 text-center text-gray-500">Webideainfotech</div>
           </div>
         </div>
       </main>

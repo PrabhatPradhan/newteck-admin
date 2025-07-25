@@ -104,7 +104,7 @@ export default function AddCategoryPage() {
               Add  
             </button>
 
-            <div className="mt-4 text-sm text-gray-500">info@xyz.in</div>
+            <div className="mt-4 text-sm text-gray-500">Webideainfotech</div>
           </form>
         </div>
       </main>

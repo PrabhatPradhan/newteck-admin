@@ -158,7 +158,7 @@ export default function AddCategoryPageType() {
             </form>
           </div>
           <footer className="text-center text-sm text-gray-500 mt-6">
-            info@xyz.in
+          Webideainfotech
           </footer>
         </div>
       </main>

@@ -13,7 +13,7 @@ export default function EditCategoryPageType() {
     price: '349',
     offerPrice: '249',
     status: 'Active',
-    email: 'info@xyz.in',
+    email: 'Webideainfotech',
   });
 
   const handleChange = (e) => {

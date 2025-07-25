@@ -97,7 +97,7 @@ export default function Page() {
               </tbody>
             </table>
             <div className="text-xs text-right text-gray-500 p-4">
-              info@xyz.in
+              Webideainfotech
             </div>
           </div>
         </div>

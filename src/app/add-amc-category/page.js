@@ -91,7 +91,7 @@ export default function AddAmcCategoryPage() {
 
           {/* Footer */}
           <footer className="text-center text-gray-600 mt-6">
-            info@xyz.in
+          Webideainfotech
           </footer>
         </div>
       </main>

@@ -79,7 +79,7 @@ export default function CategoryList() {
             </table>
           </div>
 
-          <div className="mt-4 text-sm text-gray-500">info@xyz.in</div>
+          <div className="mt-4 text-sm text-gray-500">Webideainfotech</div>
         </div>
       </main>
     </div>

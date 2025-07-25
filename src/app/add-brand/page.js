@@ -145,7 +145,7 @@ export default function AddBrand() {
               </select>
             </div>
 
-            <div className="text-right text-sm text-gray-500">info@xyz.in</div>
+            <div className="text-right text-sm text-gray-500">Webideainfotech</div>
           </form>
         </div>
       </main>

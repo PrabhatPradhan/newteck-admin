@@ -197,7 +197,7 @@ export default function PlansPage() {
             </table>
           </div>
           <p className="text-center text-sm text-gray-500 mt-6">
-            info@xyz.in
+            Webideainfotech
           </p>
         </div>
       </main>

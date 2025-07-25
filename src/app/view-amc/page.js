@@ -67,7 +67,7 @@ export default function Page() {
           </div>
 
           {/* Footer */}
-          <footer className="text-center text-gray-600 mt-6">info@xyz.in</footer>
+          <footer className="text-center text-gray-600 mt-6">Webideainfotech</footer>
         </div>
       </main>
     </div>
